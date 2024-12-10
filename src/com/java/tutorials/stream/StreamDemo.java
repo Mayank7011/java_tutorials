@@ -2,6 +2,7 @@ package com.java.tutorials.stream;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StreamDemo {
@@ -33,6 +34,7 @@ public class StreamDemo {
         Stream<String> stream2 = Stream.of("a", "b");
         // 4. Infinite streams
         Stream.generate(() -> 1);
-        Stream.iterate(1, x -> x + 1);
+        List<Integer> list1 = Stream.iterate(1, x -> x + 1).limit(100).collect(Collectors.toList());
+        System.out.println(list1);
     }
 }
